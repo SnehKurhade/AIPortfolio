@@ -1,0 +1,103 @@
+[
+  {
+    "category": "Frontend",
+    "skills": [
+      "Angular (Expert)",
+      "AngularJS",
+      "React (Intermediate)",
+      "TypeScript (Expert)",
+      "JavaScript (Expert)",
+      "HTML5",
+      "CSS3",
+      "Bootstrap",
+      "Material Design",
+      "RxJS",
+      "State Management",
+      "Responsive Design"
+    ],
+    "proficiency": "Expert",
+    "yearsOfExperience": 4
+  },
+  {
+    "category": "Backend",
+    "skills": [
+      "C# (Expert)",
+      ".NET Core (Expert)",
+      ".NET Framework",
+      "ASP.NET MVC",
+      "REST APIs",
+      "Entity Framework",
+      "Dependency Injection",
+      "Design Patterns",
+      "SOLID Principles",
+      "Microservices"
+    ],
+    "proficiency": "Expert",
+    "yearsOfExperience": 4
+  },
+  {
+    "category": "Database",
+    "skills": [
+      "SQL Server (Expert)",
+      "Stored Procedures",
+      "Query Optimization",
+      "Indexing",
+      "Transactions",
+      "Database Design",
+      "Entity Framework Core",
+      "LINQ"
+    ],
+    "proficiency": "Expert",
+    "yearsOfExperience": 4
+  },
+  {
+    "category": "AI & Machine Learning",
+    "skills": [
+      "OpenAI API",
+      "Groq API",
+      "LangChain",
+      "RAG (Retrieval-Augmented Generation)",
+      "Vector Databases (ChromaDB, Qdrant)",
+      "Prompt Engineering",
+      "Model Context Protocol (MCP)",
+      "Embeddings",
+      "Semantic Search",
+      "GitHub Copilot"
+    ],
+    "proficiency": "Intermediate",
+    "yearsOfExperience": 1
+  },
+  {
+    "category": "Cloud & DevOps",
+    "skills": [
+      "Microsoft Azure (Expert)",
+      "Azure App Services",
+      "Azure SQL Database",
+      "Azure Pipelines",
+      "Azure DevOps",
+      "CI/CD",
+      "Docker",
+      "AWS (Basic)",
+      "Cloud Architecture"
+    ],
+    "proficiency": "Intermediate",
+    "yearsOfExperience": 2
+  },
+  {
+    "category": "Tools & Technologies",
+    "skills": [
+      "Git & GitHub",
+      "Visual Studio",
+      "VS Code",
+      "Postman",
+      "Swagger",
+      "NUnit",
+      "Jest",
+      "Jasmine",
+      "SQL Server Management Studio",
+      "Azure Data Studio"
+    ],
+    "proficiency": "Expert",
+    "yearsOfExperience": 4
+  }
+]

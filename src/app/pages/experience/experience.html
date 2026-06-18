@@ -1,0 +1,23 @@
+<section class="section">
+  <div class="container">
+    <div class="section-title">
+      <h2>Experience</h2>
+    </div>
+    
+    <div class="timeline">
+      <div *ngFor="let exp of experiences" class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content card">
+          <h3>{{ exp.position }}</h3>
+          <p class="company">{{ exp.company }}</p>
+          <p class="period">{{ exp.period }}</p>
+          
+          <h4>Achievements:</h4>
+          <ul class="achievements">
+            <li *ngFor="let achievement of exp.achievements">{{ achievement }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,93 @@
+<!-- Hero Section with Code Display -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <!-- Left Side -->
+      <div class="hero-left">
+        <div class="hero-tag">FULL STACK & AI ENGINEER</div>
+        <h1>Building the <span class="gradient-text">future of web</span></h1>
+        <p class="hero-description">
+          Hi, I'm Sneh Kurhade. I architect scalable Next.js applications and engineer multi-agent AI workflows.
+        </p>
+        
+        <div class="hero-buttons">
+          <a routerLink="/projects" class="btn btn-primary">View Projects</a>
+          <a routerLink="/chat" class="btn btn-secondary">Chat with AI</a>
+        </div>
+      </div>
+
+      <!-- Right Side - Code Snippet -->
+      <div class="hero-right">
+        <div class="code-window">
+          <div class="code-header">
+            <span class="code-dot red"></span>
+            <span class="code-dot yellow"></span>
+            <span class="code-dot green"></span>
+            <span class="code-label">server.js</span>
+          </div>
+          <pre><code [innerText]="codeSnippet"></code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section class="about-section section">
+  <div class="container">
+    <div class="section-title">
+      <h2>About Me</h2>
+    </div>
+    
+    <div class="about-grid">
+      <div class="card">
+        <h3>4+ Years Experience</h3>
+        <p>Full Stack Developer building scalable enterprise applications with Angular, .NET, and SQL Server.</p>
+      </div>
+      <div class="card">
+        <h3>AI & LLM Focus</h3>
+        <p>Recently expanded into AI Engineering with expertise in RAG pipelines, LLM integrations, and agentic workflows.</p>
+      </div>
+      <div class="card">
+        <h3>Cloud & DevOps</h3>
+        <p>Experienced with Azure deployments, CI/CD pipelines, and infrastructure optimization.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Quick Stats -->
+<section class="stats-section section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-number gradient-text">4+</div>
+        <div class="stat-label">Years of Development</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number gradient-text">50+</div>
+        <div class="stat-label">Projects Completed</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number gradient-text">15+</div>
+        <div class="stat-label">Technologies</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number gradient-text">∞</div>
+        <div class="stat-label">Passion for Code</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section section">
+  <div class="container text-center">
+    <h2>Let's Build Something Amazing</h2>
+    <p class="cta-description">Explore my work, or chat with an AI version of me to learn more</p>
+    <div class="cta-buttons">
+      <a routerLink="/projects" class="btn btn-primary">View All Projects</a>
+      <a routerLink="/chat" class="btn btn-secondary">Chat with AI</a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,45 @@
+{
+  "name": "Sneh Kurhade",
+  "title": "Full Stack Developer | AI Engineer",
+  "summary": "Full Stack Developer with 4+ years of experience building scalable enterprise applications using Angular, .NET and SQL. Recently expanded into AI Engineering, building LLM powered applications using OpenAI APIs, RAG Pipelines and Agentic workflows.",
+  "contact": {
+    "email": "sneh.kurhade@example.com",
+    "phone": "+91-XXXXXXXXXX",
+    "location": "India",
+    "linkedin": "linkedin.com/in/sneh-kurhade",
+    "github": "github.com/sneh-kurhade"
+  },
+  "experience": [
+    {
+      "company": "Nihilent",
+      "position": "Full Stack Developer",
+      "duration": "2022 - Present",
+      "achievements": [
+        "Built lending platform for Nedbank using Angular and .NET Core",
+        "Led AngularJS to Angular migration for legacy applications",
+        "Managed Azure cloud deployments and CI/CD pipelines",
+        "Developed AI chatbot backend with NLP capabilities",
+        "Implemented RAG pipeline for document-based Q&A",
+        "Created comprehensive NUnit test suites",
+        "Integrated Model Context Protocol (MCP) for advanced workflows"
+      ]
+    }
+  ],
+  "skills": {
+    "frontend": ["Angular", "AngularJS", "React", "TypeScript", "JavaScript", "HTML5", "CSS3", "Bootstrap", "Material Design"],
+    "backend": ["C#", ".NET Core", ".NET Framework", "ASP.NET MVC", "REST APIs", "Entity Framework", "Dependency Injection"],
+    "database": ["SQL Server", "Stored Procedures", "Query Optimization", "Entity Framework Core", "Database Design"],
+    "ai_ml": ["OpenAI API", "Groq API", "LangChain", "RAG Systems", "Vector Databases", "Prompt Engineering", "MCP Servers", "GitHub Copilot"],
+    "cloud": ["Microsoft Azure", "Azure App Services", "Azure SQL Database", "Azure DevOps", "AWS (Basic)"],
+    "tools": ["Git", "GitHub", "Docker", "Visual Studio", "VS Code", "Postman", "Swagger"]
+  },
+  "education": [
+    {
+      "institution": "University/College Name",
+      "degree": "Bachelor of Engineering",
+      "field": "Computer Science",
+      "year": "2022"
+    }
+  ],
+  "languages": ["English", "Hindi"]
+}

@@ -1,0 +1,30 @@
+<section class="section">
+  <div class="container">
+    <div class="section-title">
+      <h2>Projects</h2>
+    </div>
+    <p class="section-subtitle">Expanding beyond the resume with innovative solutions</p>
+    
+    <div class="projects-grid">
+      <div *ngFor="let project of projects" class="project-card card">
+        <div class="project-header">
+          <h3>{{ project.title }}</h3>
+        </div>
+        <p class="description">{{ project.description }}</p>
+        
+        <div class="technologies">
+          <span *ngFor="let tech of project.technologies" class="tech-badge">{{ tech }}</span>
+        </div>
+        
+        <div class="highlights">
+          <h4>Highlights:</h4>
+          <ul>
+            <li *ngFor="let highlight of project.highlights">{{ highlight }}</li>
+          </ul>
+        </div>
+        
+        <a *ngIf="project.link" [href]="project.link" target="_blank" class="project-link">View Project →</a>
+      </div>
+    </div>
+  </div>
+</section>

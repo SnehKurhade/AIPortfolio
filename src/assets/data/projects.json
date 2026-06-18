@@ -1,0 +1,47 @@
+[
+  {
+    "id": "1",
+    "title": "Enterprise Lending Platform",
+    "description": "Full-stack lending platform built for Nedbank with responsive UI, robust backend APIs, and cloud deployment.",
+    "technologies": ["Angular", ".NET Core", "SQL Server", "Azure", "REST APIs"],
+    "highlights": [
+      "Responsive web platform with modern UI design",
+      "RESTful APIs for all backend operations",
+      "Azure cloud deployments and auto-scaling",
+      "Performance optimization (reduced load time by 40%)",
+      "Comprehensive unit and integration tests"
+    ],
+    "duration": "8 months",
+    "impact": "Improved lending process efficiency by 35%"
+  },
+  {
+    "id": "2",
+    "title": "AI Resume Assistant",
+    "description": "LLM-powered application that analyzes resumes and provides AI-driven insights for career improvement.",
+    "technologies": ["Groq API", "LangChain", ".NET Core", "Angular", "ChromaDB"],
+    "highlights": [
+      "Users upload resumes for AI analysis",
+      "Identifies missing skills and competencies",
+      "Suggests career improvement paths",
+      "Generates tailored cover letters",
+      "Built RAG pipeline for contextual recommendations"
+    ],
+    "duration": "3 months",
+    "impact": "Helps 100+ users improve their resumes"
+  },
+  {
+    "id": "3",
+    "title": "AI Portfolio Chatbot",
+    "description": "Intelligent conversational AI that answers questions about your portfolio, experience, and technical expertise.",
+    "technologies": ["RAG", "Vector Databases", "Groq", "Angular", ".NET Core", "Qdrant"],
+    "highlights": [
+      "Trained on resume, projects, and experience data",
+      "Answers complex career and skill questions",
+      "Provides personalized career recommendations",
+      "Learns from user interactions",
+      "Integrates with portfolio website"
+    ],
+    "duration": "Ongoing",
+    "impact": "Engages 50+ recruiters monthly with AI interactions"
+  }
+]

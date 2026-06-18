@@ -1,0 +1,30 @@
+[
+  {
+    "id": "1",
+    "title": "Building Enterprise Applications with .NET Core",
+    "content": "Share insights on architecting scalable enterprise applications using .NET Core, focusing on clean architecture, design patterns, and best practices.",
+    "date": "2024-01-15",
+    "tags": ["dotnet", "architecture", "enterprise"]
+  },
+  {
+    "id": "2",
+    "title": "Angular Best Practices for Large-Scale Applications",
+    "content": "Guide on managing large Angular applications, including state management, performance optimization, and code organization strategies.",
+    "date": "2023-12-10",
+    "tags": ["angular", "performance", "web-development"]
+  },
+  {
+    "id": "3",
+    "title": "Getting Started with RAG and LLMs",
+    "content": "Introduction to Retrieval-Augmented Generation (RAG) pipelines, vector databases, and building LLM-powered applications.",
+    "date": "2024-02-20",
+    "tags": ["ai", "rag", "llm", "machine-learning"]
+  },
+  {
+    "id": "4",
+    "title": "Leveraging Groq API for Fast AI Inference",
+    "content": "Practical guide on using Groq API for rapid LLM inference, integration patterns, and real-world applications.",
+    "date": "2024-03-05",
+    "tags": ["ai", "groq", "api", "inference"]
+  }
+]

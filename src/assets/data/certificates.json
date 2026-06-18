@@ -1,0 +1,24 @@
+[
+  {
+    "id": "1",
+    "name": "Microsoft Certified: Azure Developer Associate",
+    "issuer": "Microsoft",
+    "date": "2023",
+    "credentialId": "XXXXXXX",
+    "credentialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/azure-developer/"
+  }
+  {
+    "id": "2",
+    "name": "Angular Advanced Course",
+    "issuer": "Udemy",
+    "date": "2022",
+    "credentialUrl": "https://udemy.com"
+  },
+  {
+    "id": "3",
+    "name": "AI & Machine Learning Fundamentals",
+    "issuer": "Coursera",
+    "date": "2024",
+    "credentialUrl": "https://coursera.org"
+  }
+]
