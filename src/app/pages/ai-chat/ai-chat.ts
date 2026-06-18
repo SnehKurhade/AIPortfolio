@@ -17,9 +17,6 @@ export class AiChatComponent implements OnInit, AfterViewChecked {
   userInput = '';
   loading = false;
   shouldScroll = false;
-  showApiKeyInput = false;
-  apiKeyInput = '';
-  isGroqConfigured = false;
   displayedText = '';
 
   exampleQuestions = [
@@ -33,20 +30,15 @@ export class AiChatComponent implements OnInit, AfterViewChecked {
 
   constructor(private aiChatService: AiChatService) {}
 
-  ngOnInit() {
-    // Check if Groq is already configured
-    this.isGroqConfigured = this.aiChatService.isGroqConfigured();
+ngOnInit() {
+  const welcomeMsg =
+    "Hi! I'm AI Sneh. Ask me anything about my experience, projects, skills, or AI engineering journey.";
 
-    // Welcome message
-    const welcomeMsg = this.isGroqConfigured
-      ? "Hi! I'm AI Sneh, powered by Groq AI. Ask me anything about my experience, skills, projects, or background!"
-      : "Hi! I'm AI Sneh. I can provide responses locally, or you can configure my Groq API key for faster, more intelligent answers. Ask me anything!";
-
-    this.messages.push({
-      role: 'assistant',
-      content: welcomeMsg
-    });
-  }
+  this.messages.push({
+    role: 'assistant',
+    content: welcomeMsg
+  });
+}
   
 
 animateText(text: string) {
@@ -68,35 +60,6 @@ animateText(text: string) {
     if (this.shouldScroll) {
       this.scrollToBottom();
       this.shouldScroll = false;
-    }
-  }
-
-  /**
-   * Toggle API key input visibility
-   */
-  toggleApiKeyInput() {
-    this.showApiKeyInput = !this.showApiKeyInput;
-    if (!this.showApiKeyInput) {
-      this.apiKeyInput = '';
-    }
-  }
-
-  /**
-   * Configure Groq API key
-   */
-  configureApiKey() {
-    if (this.apiKeyInput.trim()) {
-      this.aiChatService.setGroqApiKey(this.apiKeyInput.trim());
-      this.isGroqConfigured = true;
-      this.showApiKeyInput = false;
-      this.apiKeyInput = '';
-
-      // Add confirmation message
-      this.messages.push({
-        role: 'assistant',
-        content: "✅ Groq API configured successfully! I'll now use Groq for faster, more intelligent responses."
-      });
-      this.shouldScroll = true;
     }
   }
 

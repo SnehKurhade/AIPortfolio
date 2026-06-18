@@ -49,12 +49,7 @@ Your responsibilities:
       content: question
     });
 
-    // If Groq is configured, use it; otherwise fallback to local knowledge base
-    if (this.groqService.isConfigured()) {
-      return this.chatWithGroq(question, relevantChunks);
-    } else {
-      return this.chatWithLocalKnowledge(question, relevantChunks);
-    }
+ return this.chatWithGroq(question, relevantChunks);
   }
 
   /**
@@ -197,19 +192,5 @@ Your responsibilities:
    */
   clearHistory() {
     this.messageHistory = [];
-  }
-
-  /**
-   * Check if Groq is configured
-   */
-  isGroqConfigured(): boolean {
-    return this.groqService.isConfigured();
-  }
-
-  /**
-   * Set Groq API key
-   */
-  setGroqApiKey(key: string) {
-    this.groqService.setApiKey(key);
   }
 }

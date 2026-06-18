@@ -4,43 +4,7 @@
       <h2>Chat with AI Sneh</h2>
     </div>
     <p class="section-subtitle">Ask me anything about my experience, skills, projects, and background!</p>
-    
-    <!-- Groq API Configuration -->
-    <div class="api-config">
-      <button 
-        (click)="toggleApiKeyInput()" 
-        class="config-btn"
-        [class.configured]="isGroqConfigured"
-      >
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="12" cy="12" r="1"></circle>
-          <path d="M12 1v6m0 6v6M4.22 4.22l4.24 4.24m2.12 2.12l4.24 4.24M1 12h6m6 0h6M4.22 19.78l4.24-4.24m2.12-2.12l4.24-4.24M19.78 19.78l-4.24-4.24m-2.12-2.12l-4.24-4.24"></path>
-        </svg>
-        {{ isGroqConfigured ? '⚡ Groq Configured' : '⚙️ Configure Groq API' }}
-      </button>
-      
-      <div *ngIf="showApiKeyInput" class="api-key-input-container">
-        <p>Enter your Groq API key for faster, more intelligent responses:</p>
-        <div class="input-group">
-          <input 
-            [(ngModel)]="apiKeyInput"
-            type="password"
-            placeholder="gsk_xxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-            class="api-key-input"
-          />
-          <button (click)="configureApiKey()" class="save-btn">
-            Save
-          </button>
-          <button (click)="toggleApiKeyInput()" class="cancel-btn">
-            Cancel
-          </button>
-        </div>
-        <p class="info-text">
-          Get a free API key from <a href="https://console.groq.com" target="_blank">console.groq.com</a>
-        </p>
-      </div>
-    </div>
-    
+ 
     <div class="chat-wrapper">
       <div class="messages-container" #messagesContainer>
         <div *ngFor="let message of messages" [class.user]="message.role === 'user'" class="message">

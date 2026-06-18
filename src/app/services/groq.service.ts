@@ -40,93 +40,35 @@ export interface GroqResponse {
   providedIn: 'root'
 })
 export class GroqService {
-  private apiKey: string = '';
-  private apiUrl = 'https://api.groq.com/openai/v1/chat/completions';
   private model = 'llama-3.1-8b-instant'; // Fast and capable model
 
   constructor(private http: HttpClient) {
-    // Initialize API key (in production, this should come from environment variables)
-    this.apiKey = this.getApiKey();
-  }
-
-  /**
-   * Get API key from localStorage or environment
-   */
-  private getApiKey(): string {
-    // First try to get from localStorage (set by user)
-    const stored = localStorage.getItem('groq_api_key');
-    if (stored) {
-      return stored;
-    }
-
-    // In production, this would come from environment
-    // For now, return empty and rely on user providing it
-    return '';
-  }
-
-  /**
-   * Set the API key (can be called from UI to configure)
-   */
-  setApiKey(key: string) {
-    this.apiKey = key;
-    localStorage.setItem('groq_api_key', key);
-  }
-
-  /**
-   * Check if API key is configured
-   */
-  isConfigured(): boolean {
-    return this.apiKey.length > 0;
   }
 
   /**
    * Send a message to Groq API
    */
-  chat(
-    messages: GroqMessage[],
-    temperature: number = 0.7,
-    maxTokens: number = 1024
-  ): Observable<string> {
-    if (!this.isConfigured()) {
-      return of('API key not configured. Please set your Groq API key.');
-    }
+ chat(
+  messages: GroqMessage[],
+  temperature: number = 0.7,
+  maxTokens: number = 1024
+): Observable<string> {
 
-    const requestBody: GroqRequestBody = {
+  return this.http.post<any>(
+    '/api/chat',
+    {
       messages,
-      model: this.model,
       temperature,
-      max_tokens: maxTokens,
-      top_p: 1
-    };
-
-    const headers = new HttpHeaders({
-      'Authorization': `Bearer ${this.apiKey}`,
-      'Content-Type': 'application/json'
-    });
-
-    return this.http.post<GroqResponse>(this.apiUrl, requestBody, { headers }).pipe(
-      map(response => {
-        if (response.choices && response.choices.length > 0) {
-          return response.choices[0].message.content;
-        }
-        return 'No response received from Groq API';
-      }),
-      catchError(error => {
-        console.error('Groq API Error:', error);
-        
-        // Fallback response if API fails
-        if (error.status === 401) {
-          return of('Invalid API key. Please check your Groq API key configuration.');
-        } else if (error.status === 429) {
-          return of('Rate limit exceeded. Please try again in a moment.');
-        } else if (error.status === 500) {
-          return of('Groq API is experiencing issues. Please try again later.');
-        }
-        
-        return of('Error communicating with Groq API. Please try again.');
-      })
-    );
-  }
+      maxTokens
+    }
+  ).pipe(
+    map(response => response.content),
+    catchError(error => {
+      console.error(error);
+      return of('Error communicating with AI service.');
+    })
+  );
+}
 
   /**
    * Generate a response with system prompt and context
@@ -173,9 +115,9 @@ If the context doesn't contain relevant information, acknowledge it and provide 
    * List of available Groq models for this service
    */
   getAvailableModels(): string[] {
-    return [    // Fast, capable
-      'llama2-70b-4096',        // Larger, more capable
-      'gemma-7b-it'             // Faster, smaller
-    ];
-  }
-}
+    return [ 
+    'llama-3.1-8b-instant',
+    'llama-3.3-70b-versatile',
+    'deepseek-r1-distill-llama-70b'
+    ]
+}}
