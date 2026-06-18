@@ -44,14 +44,14 @@ export class PortfolioService {
     },
     {
       id: '2',
-      title: 'AI Resume Assistant',
-      description: 'LLM-powered application that analyzes resumes and provides AI-driven insights and recommendations.',
-      technologies: ['Groq', 'LangChain', '.NET', 'Angular'],
+      title: 'Battleship UI',
+      description: 'A multiplayer and single-player Battleship game UI built purely in vanilla JS to improve rendering time. Features real-time gameplay, responsive design, and interactive animations.',
+      technologies: ['html', 'css', 'JavaScript'],
       highlights: [
-        'Users upload resumes for analysis',
-        'AI identifies missing skills',
-        'Suggests improvements',
-        'Generates cover letters'
+        'Multiplayer and single-player modes',
+        'Responsive design for all devices',
+        'Interactive animations using SVGs',
+        'Optimized rendering for smooth gameplay'
       ]
     },
     {
