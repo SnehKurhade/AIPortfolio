@@ -110,6 +110,15 @@ export class PortfolioService {
         'Created NUnit tests',
         'Integrated MCP workflows'
       ]
+    },
+     {
+      id: '2',
+      company: 'SPPU',
+      position: 'Batchelor of Engineering',
+      period: '2018 - 2022',
+      achievements: [
+      
+      ]
     }
   ];
 
