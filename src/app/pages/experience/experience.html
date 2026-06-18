@@ -12,7 +12,7 @@
           <p class="company">{{ exp.company }}</p>
           <p class="period">{{ exp.period }}</p>
           
-          <h4>Achievements:</h4>
+          <h4 *ngIf="exp.achievements.length > 0">Achievements:</h4>
           <ul class="achievements">
             <li *ngFor="let achievement of exp.achievements">{{ achievement }}</li>
           </ul>
