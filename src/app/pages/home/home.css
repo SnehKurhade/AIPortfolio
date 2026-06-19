@@ -260,6 +260,11 @@
   .cta-buttons {
     flex-direction: column;
   }
+
+  .about-section {
+    margin-top: 2rem;
+    padding: 2rem 0 !important;
+  }
 }
 
 .btn-primary:hover {
