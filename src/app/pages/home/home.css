@@ -1,6 +1,6 @@
 /* Hero Section */
 .hero {
-  padding: 8rem 0 6rem;
+  padding: 2rem 0 6rem;
   position: relative;
   overflow: hidden;
 }
@@ -224,7 +224,7 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .hero {
-    padding: 4rem 0 3rem;
+    padding: 0;
   }
 
   .hero-grid {

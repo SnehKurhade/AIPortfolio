@@ -1,8 +1,8 @@
-import { Component, OnInit, ViewChild, ElementRef, AfterViewChecked } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, AfterViewChecked, Input } from '@angular/core';
 import { CommonModule, NgFor, NgIf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AiChatService, ChatMessage } from '../../services/ai-chat.service';
-
+import { ChatStateService } from '../../services/chat.state.service';
 @Component({
   selector: 'app-ai-chat',
   standalone: true,
@@ -10,9 +10,9 @@ import { AiChatService, ChatMessage } from '../../services/ai-chat.service';
   templateUrl: './ai-chat.html',
   styleUrl: './ai-chat.css'
 })
-export class AiChatComponent implements OnInit, AfterViewChecked {
+export class AiChatComponent implements OnInit, AfterViewChecked, ChatStateService {
   @ViewChild('messagesContainer') private messagesContainer!: ElementRef;
-
+  @Input() isWidget = false;
   messages: ChatMessage[] = [];
   userInput = '';
   loading = false;
@@ -28,40 +28,53 @@ export class AiChatComponent implements OnInit, AfterViewChecked {
     'What AI projects has Sneh built?'
   ];
 
-  constructor(private aiChatService: AiChatService) {}
+  constructor(
+    private aiChatService: AiChatService,
+    public chatState: ChatStateService
+  ) { }
 
-ngOnInit() {
-  const welcomeMsg =
-    "Hi! I'm AI Sneh. Ask me anything about my experience, projects, skills, or AI engineering journey.";
+  ngOnInit() {
+    const welcomeMsg =
+      "Hi! I'm Sneh.AI Ask me anything about my experience, projects, skills, or AI engineering journey.";
 
-  this.messages.push({
-    role: 'assistant',
-    content: welcomeMsg
-  });
-}
-  
-
-animateText(text: string) {
-  this.displayedText = '';
-
-  let index = 0;
-
-  const interval = setInterval(() => {
-    this.displayedText += text.charAt(index);
-    index++;
-
-    if (index >= text.length) {
-      clearInterval(interval);
+    if (this.chatState.messages.length === 0) {
+      this.chatState.messages.push({
+        role: 'assistant',
+        content: welcomeMsg
+      });
     }
-  }, 20); // typing speed in ms
-}
-
-  ngAfterViewChecked() {
-    if (this.shouldScroll) {
-      this.scrollToBottom();
-      this.shouldScroll = false;
-    }
+    this.messages = this.chatState.messages;
+    this.animateText(welcomeMsg);
   }
+
+ 
+  animateText(text: string) {
+    this.displayedText = '';
+
+    let index = 0;
+
+    const interval = setInterval(() => {
+      this.displayedText += text.charAt(index);
+      index++;
+
+      if (index >= text.length) {
+        clearInterval(interval);
+      }
+    }, 20); // typing speed in ms
+  }
+
+ngAfterViewInit() {
+  if (this.isWidget && this.messages.length > 1) {
+    this.shouldScroll = true;
+  }
+}
+
+ngAfterViewChecked() {
+  if (this.shouldScroll) {
+    this.scrollToBottom();
+    this.shouldScroll = false;
+  }
+}
 
   sendMessage() {
     if (!this.userInput.trim()) return;
@@ -104,12 +117,12 @@ animateText(text: string) {
     this.sendMessage();
   }
 
-  private scrollToBottom(): void {
-    try {
-      this.messagesContainer.nativeElement.scrollTop =
-        this.messagesContainer.nativeElement.scrollHeight;
-    } catch (err) {
-      console.error('Scroll error:', err);
+private scrollToBottom(): void {
+  setTimeout(() => {
+    if (this.messagesContainer?.nativeElement) {
+      const element = this.messagesContainer.nativeElement;
+      element.scrollTop = element.scrollHeight;
     }
-  }
+  }, 50);
+}
 }

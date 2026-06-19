@@ -1,54 +1,46 @@
 <section class="section">
   <div class="container">
-    <div class="section-title">
-      <h2>Chat with AI Sneh</h2>
+    <div *ngIf="isWidget" class="widget-header">
+      <div class="widget-header-title">
+        🤖 Sneh.AI
+      </div>
     </div>
-    <p class="section-subtitle">Ask me anything about my experience, skills, projects, and background!</p>
- 
+    <div *ngIf="!isWidget">
+      <div class="section-title">
+        <h2>Chat with Sneh.AI</h2>
+      </div>
+    </div>
     <div class="chat-wrapper">
       <div class="messages-container" #messagesContainer>
+
         <div *ngFor="let message of messages" [class.user]="message.role === 'user'" class="message">
           <div class="message-content">{{ message.content }}</div>
         </div>
-        
+
         <div *ngIf="loading" class="message assistant">
           <div class="message-content loading">
             <span class="dot"></span><span class="dot"></span><span class="dot"></span>
           </div>
         </div>
       </div>
-      
+
       <div class="input-area">
         <div class="input-wrapper">
-          <input 
-            [(ngModel)]="userInput" 
-            (keyup.enter)="sendMessage()"
-            [disabled]="loading"
-            type="text" 
-            placeholder="Ask me something... e.g., 'What AI projects have you built?'"
-            class="chat-input"
-          />
-          <button 
-            (click)="sendMessage()" 
-            [disabled]="loading || !userInput.trim()"
-            class="send-btn"
-          >
+          <input [(ngModel)]="userInput" (keyup.enter)="sendMessage()" [disabled]="loading" type="text"
+            placeholder="Ask me something...'" class="chat-input" />
+          <button (click)="sendMessage()" [disabled]="loading || !userInput.trim()" class="send-btn">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <line x1="22" y1="2" x2="11" y2="13"></line>
               <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
             </svg>
           </button>
         </div>
-        
+
         <div class="suggested-questions">
-          <p>Try asking:</p>
+          <p>Suggested questions:</p>
           <div class="question-buttons">
-            <button 
-              *ngFor="let question of exampleQuestions"
-              (click)="askQuestion(question)"
-              [disabled]="loading"
-              class="question-btn"
-            >
+            <button *ngFor="let question of exampleQuestions" (click)="askQuestion(question)" [disabled]="loading"
+              class="question-btn">
               {{ question }}
             </button>
           </div>

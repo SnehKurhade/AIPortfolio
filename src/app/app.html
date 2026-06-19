@@ -64,6 +64,26 @@
     <router-outlet></router-outlet>
   </main>
 
+<button
+  *ngIf="showChatWidget"
+  class="floating-chat-btn"
+  (click)="toggleWidget()">
+
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+    <path
+      d="M12 2V6M8 2H16M6 9H18C19.1 9 20 9.9 20 11V18C20 19.1 19.1 20 18 20H6C4.9 20 4 19.1 4 18V11C4 9.9 4.9 9 6 9Z"
+      stroke="currentColor"
+      stroke-width="2"/>
+    <circle cx="9" cy="14" r="1"/>
+    <circle cx="15" cy="14" r="1"/>
+  </svg>
+
+</button>
+<div
+  *ngIf="showChatWidget && chatOpen" class="chat-widget">
+  <app-ai-chat  [isWidget]="true"></app-ai-chat>
+</div>
+
   <!-- Footer -->
   <footer class="footer">
     <div class="container">

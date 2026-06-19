@@ -158,6 +158,10 @@ a:hover {
   h2 {
     font-size: 1.875rem;
   }
+
+  .section {
+    padding: 1.5rem 0;
+  }
 }
 
 /* Grid */
@@ -176,7 +180,7 @@ a:hover {
 
 /* Sections */
 .section {
-  padding: 6rem 0;
+  padding: 2rem 0;
 }
 
 .section-title {

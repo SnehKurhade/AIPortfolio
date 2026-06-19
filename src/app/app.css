@@ -63,8 +63,15 @@
   }
 
   .logo a {
-    font-size: 1/75rem;
+    font-size: 1.25rem;
   }
+
+.chat-widget {
+  width: auto;
+  left: 12px;
+  right: 12px;
+  bottom: 80px;
+}
 
   .mobile-menu-btn {
     display: flex;
@@ -88,15 +95,68 @@
   }
 
    /* Hero Section */
-
+/* 
   .hero {
     padding-top: 1rem;
-  }
+  } */
 
-  .hero-grid {
+  /* .hero-grid {
     gap: 1.5rem;
-  }
+  } */
 
+}
+
+.chat-widget {
+   width: 400px;
+  height: 500px;
+
+  position: fixed;
+  right: 20px;
+  bottom: 10px;
+
+  z-index: 999;
+  overflow: hidden;
+  border-radius: 16px;
+
+  background: #050816;
+  box-shadow: 0 0 30px rgba(0,212,255,.2);
+}
+
+.chat-widget app-ai-chat,
+.chat-widget .chat-wrapper {
+  height: 100%;
+}
+
+.floating-chat-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+
+  width: 64px;
+  height: 64px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: linear-gradient(
+    135deg,
+    #00d4ff,
+    #6c63ff
+  );
+
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 0 20px rgba(0,212,255,.4),
+    0 0 40px rgba(108,99,255,.2);
+
+  z-index: 1000;
 }
 
 .logo a {
@@ -174,7 +234,7 @@
 }
 
 main {
-  padding: 2rem;
+  padding: 0rem;
   max-width: 1200px;
   margin: 0 auto;
 }
